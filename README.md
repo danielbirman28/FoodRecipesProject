@@ -8,5 +8,5 @@ This is a data science project for DSC80 at UCSD focusing on exploring the relat
 
 ## Introduction
 
-Lorem ipsum
+Lorem ipsum muspi merol
 
