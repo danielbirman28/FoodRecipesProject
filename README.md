@@ -114,6 +114,7 @@ The missing data in the 'rating' column may be NMAR (Not Missing At Random) if u
 Here we wanted to investigate whether the missingness of the <code class="language-plaintext highlighter-rouge">'rating'</code> column was dependent on the <code class="language-plaintext highlighter-rouge">'minutes'</code> column or the <code class="language-plaintext highlighter-rouge">'n_steps'</code> column.
 
 > Minutes and Rating
+
 **Null Hypothesis:** The missingness in the 'rating' column is independent of the 'minutes' column.
 **Alternate Hypothesis:** The missingness in the 'rating' column depends on the 'minutes' column.
 **Test Statistic:** The test statistic is the absolute difference in the mean 'minutes' between the groups with missing and non-missing 'rating' values.
@@ -131,6 +132,7 @@ We then peformed a permutation test by shuffling the missingness of minutes 1000
 As show in the graph above, the **observed statistic** is **51.4597** which is designated by the red line. We found our **p-value** to be **0.129** which is greater than our significance level of 0.05. Since this is the case, we **fail to reject** the null hypothesis that the missingness in the 'rating' column is independent of the 'minutes' column. Therefore, the missingness in 'rating' does not depend on 'minutes'
 
 > N Steps and Rating
+
 **Null Hypothesis:** The missingness in the 'rating' column is independent of the 'n_steps' column.
 **Alternate Hypothesis:** The missingness in the 'rating' column depends on the 'n_steps' column.
 **Test Statistic:** The test statistic is the difference in the mean 'n_steps' between the groups with missing and non-missing 'rating' values.
