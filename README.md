@@ -1,4 +1,4 @@
-# Investigating the relationship between dessert recipes and their total steps
+# Investigating the relationship between food recipes and their total steps
 
 By Daniel Birman and Megha Kataki
 
@@ -37,6 +37,7 @@ The second dataset is titled <code class="language-plaintext highlighter-rouge">
 | <code class="language-plaintext highlighter-rouge">'rating'</code> | The rating given |
 | <code class="language-plaintext highlighter-rouge">'review'</code> | The review given |
 
+
 ## Data Cleaning and Exploratory Data Analysis
 To aid in our exploration, we cleaned our data set in the following ways:
 1. Left merge the recipes and interactions datasets together
@@ -50,7 +51,8 @@ To aid in our exploration, we cleaned our data set in the following ways:
 5. Convert the <code class="language-plaintext highlighter-rouge">'submitted'</code> and <code class="language-plaintext highlighter-rouge">'date'</code> column from objects to datetime objects
   - This was done in order to more easily perform analysis across dates as they were originally stored as an object.
 6. Create an <code class="language-plaintext highlighter-rouge">'is_healthy'</code> column.
-  - We created this column in order to aid in our analysis of healthy versus non-healthy recipe items more easily. The tags we used to determine this included: ['healthy', 'health', 'low-calorie', 'low calorie', 'low-sugar', 'low sugar', 'nutritious', 'whole-grain', 'vegetarian', 'vegan', 'organic', 'fresh', 'lean', 'high-fiber', 'low-fat', 'gluten-free']
+  - We created this column in order to aid in our analysis of healthy versus non-healthy recipe items more easily.
+  - The tags we used to determine this included: ['healthy', 'health', 'low-calorie', 'low calorie', 'low-sugar', 'low sugar', 'nutritious', 'whole-grain', 'vegetarian', 'vegan', 'organic', 'fresh', 'lean', 'high-fiber', 'low-fat', 'gluten-free']
 7. Create a <code class="language-plaintext highlighter-rouge">'is_dessert'</code> column.
   - This column can be used in comparing dessert recipes versus meal recipes.
 
@@ -88,7 +90,7 @@ Here, we wanted to explore the distribution of N steps for healthy and unhealthy
 
 ### Interesting Aggegrates
 
-Here we created a dataframe called <code class="language-plaintext highlighter-rouge">contributor_aggregates</code> where we grouped by is_dessert and is_healthy and calculated aggregate statistics to analyze the difference between these two reciupe types.  By examining the average rating, steps, and cooking time for dessert and healthy recipes, we can gain insights into how these types of recipes differ in terms of user preferences and preparation requirements. The dataframe below for <code class="language-plaintext highlighter-rouge">contributor_aggregates</code> shows the first 5 rows of which contributors of recipes tend to have the highest total number of recipes submitted, highest average cook times, and higest average total recipe steps. As we can see, the contributor with contributor ID 37449 has the most recipes submitted at 3060 total recipes. Contributor 226863 has the highest average steps per recipe at over 12 average steps and the highest average minutes required at 112 minutes!
+Here we created a dataframe called <code class="language-plaintext highlighter-rouge">contributor_aggregates</code> where we grouped by <code class="language-plaintext highlighter-rouge">'is_dessert'</code> and <code class="language-plaintext highlighter-rouge">'is_healthy'</code> and calculated aggregate statistics to analyze the difference between these two reciupe types.  By examining the average rating, steps, and cooking time for dessert and healthy recipes, we can gain insights into how these types of recipes differ in terms of user preferences and preparation requirements. The dataframe below for <code class="language-plaintext highlighter-rouge">contributor_aggregates</code> shows the first 5 rows of which contributors of recipes tend to have the highest total number of recipes submitted, highest average cook times, and higest average total recipe steps. As we can see, the contributor with contributor ID 37449 has the most recipes submitted at 3060 total recipes. Contributor 226863 has the highest average steps per recipe at over 12 average steps and the highest average minutes required at 112 minutes! Could it be that having a higher average steps means the recipe will take longer to make?
 
 |   contributor_id |   avg_rating |   total_recipes |   avg_steps |   avg_minutes |
 |-----------------:|-------------:|----------------:|------------:|--------------:|
@@ -97,3 +99,14 @@ Here we created a dataframe called <code class="language-plaintext highlighter-r
 |           424680 |      4.80217 |            2503 |     6.0004  |       33.6336 |
 |            89831 |      4.78994 |            2436 |     9.35591 |       97.3001 |
 |           383346 |      4.76688 |            2368 |     8.86318 |       41.0249 |
+
+
+## Assessment of Missingness
+
+During our data cleaning step, we found that three columns have significant missing values: <code class="language-plaintext highlighter-rouge">'rating'</code>, <code class="language-plaintext highlighter-rouge">'review'</code>, and <code class="language-plaintext highlighter-rouge">'date'</code>.
+
+### NMAR Analysis
+
+The missing data in the 'rating' column may be NMAR (Not Missing At Random) if user experiences and platform design influence the likelihood of providing a rating. Users who had extremely positive or negative experiences might be more inclined to leave a rating, while those with moderate or indifferent experiences might skip the step to leave a rating. Additionally, if the platform's design makes rating optional, the missingness could be related to user interface elements rather than random factors.
+
+## Missingness Dependency
