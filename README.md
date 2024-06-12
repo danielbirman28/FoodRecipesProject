@@ -61,3 +61,14 @@ After performing these data cleaning operations, our <code class="language-plain
 |    935485 |      321038 | 2009-06-22 |        5 | hg s grab  n go breakfast cookies   weight watchers   2 points |        22 |           346383 | 2008-08-24  |        14 |              14 |        5     |          182.4 |                 2 |            50 |              7 |              11 |                     1 |                    13 |
 |    539686 |      321038 | 2011-03-28 |        5 | hg s grab  n go breakfast cookies   weight watchers   2 points |        22 |           346383 | 2008-08-24  |        14 |              14 |        5     |          182.4 |                 2 |            50 |              7 |              11 |                     1 |                    13 |
 |     22174 |      342209 | 2008-12-28 |        4 | banana oatmeal cookies                                         |        40 |           361931 | 2008-12-08  |         7 |              12 |        4.375 |          658.2 |                45 |           151 |             35 |              24 |                    72 |                    29 |
+
+### Univariate Analysis
+
+For this section, we analyzed the distribution of total steps that healthy recipes have. As shown in the plot, the distribution is skewed right, as the highest count of n-steps is 7. The graph shows us that most recipes fall within the 1-20 steps range, for healthy recipes.
+
+<iframe
+  src="assets/distribution-n-steps-healthy-recipes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
