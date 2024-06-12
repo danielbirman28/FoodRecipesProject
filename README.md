@@ -27,7 +27,7 @@ The first dataset is titled <code class="language-plaintext highlighter-rouge">r
 | <code class="language-plaintext highlighter-rouge">'ingredients'</code>  | List of ingredients needed |
 | <code class="language-plaintext highlighter-rouge">'n_ingredients'</code>  | Total number of ingredients needed |
 
-The second dataset is titled <code class="language-plaintext highlighter-rouge">recipe</code> interactions and it has 731,927 rows. Each row contains a rating and a review of someone who tried a specific recipe. The dataset has 4 columns and they are designated as such:
+The second dataset is titled <code class="language-plaintext highlighter-rouge">interactions</code> and it has 731,927 rows. Each row contains a rating and a review of someone who tried a specific recipe. The dataset has 4 columns and they are designated as such:
 
 | Column | Description |
 | ----------- | ----------- |
