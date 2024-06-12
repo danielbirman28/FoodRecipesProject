@@ -150,3 +150,32 @@ Again we performed a permutation test but for these columns by shuffling the mis
 We can see that from our graph of distributions, the our **observed statistic** (the red line), is significantly further away and holds a value of **1.339**. The green line is our **p-value** and has a value of **0.0**. Since our p-value is less than the significance level (0.0 < 0.05), we will **reject the null hypothesis**. Hence, The missingness in 'rating' depends on 'n_steps'.
 
 ## Hypothesis Testing
+
+Like we mentioned in the intro, we want to explore whether healthy or nonhealthy recipes tend to have a higher number of steps. To investigate this, we ran a **permutation test** with these hypotheses and test statistic:
+**Null Hypothesis:** There is no significant difference in steps between healthy and non-healthy recipes
+**Alternate Hypothesis:** There is a significant difference in steps between healthy and non-healthy recipes
+**Test Statistic:** The mean difference in healthy steps versus non healthy steps
+**Significance Level:** 0.05
+
+We chose a permutation test because we do not have any information of the population, and want to see if the distribution of healthy and non-healthy steps come from the same population. We believe that the number of steps for healthy recipes may be higher because, for example, say you have lots of fresh produce, there would be more steps to prep each ingredient whereas say a microwave dinner would be less healthy but have less steps to make. We chose this test statistic because we want to see the difference in steps between healthy and non-healthy recipes. We can see which recipes tend to have higher number of steps.
+
+Before running the test, we filtered for healthy and non-healthy recipes. Then filtered those values to extract steps and handle NaN values. We used these points to run our permutation test, and resulted in an **observed statistic** of **-1.34**.
+
+Then, we shuiffled the steps 1000 times simulating 1000 mean differences between our two distriburtions resulting in a **p-value** of **0.0**.
+
+<iframe
+  src="assets/hypothesis-test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+#### Conclusion of Permutation Test
+
+Since our **p-value** of **0.0** is less than our significance level of 0.05, we **reject the null hypothesis**. This supports the alternative hypothesis: There is a significant difference in steps between healthy and non-healthy recipes. The negative observed difference indicates that, on average, the "healthy_steps" group takes fewer steps than the "non_healthy_steps" group. The extremely low p-value indicates that it's highly unlikely to observe such a large difference in mean steps between the groups if there were truly no difference between them. This could be because the unhealthy recipes could be desserts that have many steps, like baking an intricate cake or dessert item.
+
+## Framing a Prediction Problem
+
+Our goal is to predict the number of steps in a recipe, utilizing a regression model since we're predicting a discrete quantitative variable, given that recipe steps are whole numbers. To address this problem effectively, we'll first construct a linear regression model, considering the wide range of step values recipes can encompass. Later we will expand upon our baseline model to employ a Random Forrest Regressor which can better tackle our problem of predicting recipe steps. We will use the root mean squared error (RMSE) as a metric to evaluate the model since it measures the average magnitude of errors in continuous predictions, aligning with the algorithm's objective of minimizing mean squared error during training.
+
+## Baseline Model
