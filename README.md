@@ -78,7 +78,7 @@ For this section, we analyzed the distribution of total steps that healthy recip
 Here, we wanted to explore the distribution of N steps for healthy and unhealthy recipes, and plot these distributions over one another to compare them. Below we can see that there are more unhealthy recipes in general. Even though both distributions are skewed right, the unhealthy distributions is shifted to the right slightly, meaning that unhealthy recipes tend to have more steps in their recipes.
 
 <iframe
-  src="assets/distribution-n-steps-unhealthy-recipes.html"
+  src="assets/distribution-n-steps-unhealthy-vs-healthy-recipes.html"
   width="800"
   height="600"
   frameborder="0"
