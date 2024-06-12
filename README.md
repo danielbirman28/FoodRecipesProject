@@ -10,7 +10,7 @@ This is a data science project for DSC80 at UCSD focusing on exploring the relat
 
 Recipes are an integral part of our daily lives, guiding us in preparing various dishes. Understanding what influences the complexity of a recipe can help both cooking enthusiasts and professionals alike. Whether it's for planning a quick weekday meal or preparing for a special occasion, knowing the factors affecting the number of steps in a recipe can streamline the cooking process and help achieve desired outcomes. So ultimately we aim to explore the question, **what factors influence the number of steps in a recipe?** To answer this question, we are using two datasets consisting of recipes and ratings that have been posted to the website [food.com](https://www.food.com/) since 2008. These datasets provide a wealth of information about various recipes, including ingredients, cooking steps, ratings, and nutritional details.
 
-The first dataset is titled <code class="language-plaintext highlighter-rouge">recipe</code> and has 83782 rows and 12 columns. These columns are designated as such:
+The first dataset is titled <code class="language-plaintext highlighter-rouge">recipe</code> and has 83,782 rows and 12 columns. These columns are designated as such:
 
 | Column | Description |
 | ----------- | ----------- |
@@ -52,7 +52,7 @@ To aid in our exploration, we cleaned our data set in the following ways:
 6. Create an <code class="language-plaintext highlighter-rouge">'is_healthy'</code> column.
 - We created this column in order to aid in our analysis of healthy versus non-healthy recipe items more easily.
 
-After performing these data cleaning operations, our <code class="language-plaintext highlighter-rouge">cleaned</code> data frame has 234428 rows and 23 columns. Here we did not show the columns 'review', 'tags', 'steps','directions', or 'ingredients because these rows became too large too display as some reviewers left lengthy reviews. We will show the first 5 rows for simplicity.
+After performing these data cleaning operations, our <code class="language-plaintext highlighter-rouge">cleaned</code> data frame has 234,428 rows and 23 columns. Here we did not show the columns <code class="language-plaintext highlighter-rouge">'review'</code>, <code class="language-plaintext highlighter-rouge">'tags'</code>, <code class="language-plaintext highlighter-rouge">'steps'</code>, <code class="language-plaintext highlighter-rouge">'directions'</code>, or <code class="language-plaintext highlighter-rouge">'ingredients'</code> because these rows became too large too display as some reviewers left lengthy reviews. We will show the first 5 rows for simplicity.
 
 |   user_id |   recipe_id | date       |   rating | name                                                           |   minutes |   contributor_id | submitted   |   n_steps |   n_ingredients |   avg_rating |   calories (#) |   total fat (PDV) |   sugar (PDV) |   sodium (PDV) |   protein (PDV) |   saturated fat (PDV) |   carbohydrates (PDV) |
 |----------:|------------:|:-----------|---------:|:---------------------------------------------------------------|----------:|-----------------:|:------------|----------:|----------------:|-------------:|---------------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|
