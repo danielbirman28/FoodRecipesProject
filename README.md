@@ -50,7 +50,7 @@ To aid in our exploration, we cleaned our data set in the following ways:
 5. Convert the <code class="language-plaintext highlighter-rouge">'submitted'</code> and <code class="language-plaintext highlighter-rouge">'date'</code> column from objects to datetime objects
   - This was done in order to more easily perform analysis across dates as they were originally stored as an object.
 6. Create an <code class="language-plaintext highlighter-rouge">'is_healthy'</code> column.
-- We created this column in order to aid in our analysis of healthy versus non-healthy recipe items more easily.
+- We created this column in order to aid in our analysis of healthy versus non-healthy recipe items more easily. The tags we used to determine this included: ['healthy', 'health', 'low-calorie', 'low calorie', 'low-sugar', 'low sugar', 'nutritious', 'whole-grain', 'vegetarian', 'vegan', 'organic', 'fresh', 'lean', 'high-fiber', 'low-fat', 'gluten-free']
 
 After performing these data cleaning operations, our <code class="language-plaintext highlighter-rouge">cleaned</code> data frame has 234,428 rows and 23 columns. Here we did not show the columns <code class="language-plaintext highlighter-rouge">'review'</code>, <code class="language-plaintext highlighter-rouge">'tags'</code>, <code class="language-plaintext highlighter-rouge">'steps'</code>, <code class="language-plaintext highlighter-rouge">'directions'</code>, or <code class="language-plaintext highlighter-rouge">'ingredients'</code> because these rows became too large too display as some reviewers left lengthy reviews. We will show the first 5 rows for simplicity. Use the scroll bar below to see all of the columns.
 
