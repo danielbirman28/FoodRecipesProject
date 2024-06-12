@@ -110,3 +110,41 @@ During our data cleaning step, we found that three columns have significant miss
 The missing data in the 'rating' column may be NMAR (Not Missing At Random) if user experiences and platform design influence the likelihood of providing a rating. Users who had extremely positive or negative experiences might be more inclined to leave a rating, while those with moderate or indifferent experiences might skip the step to leave a rating. Additionally, if the platform's design makes rating optional, the missingness could be related to user interface elements rather than random factors.
 
 ## Missingness Dependency
+
+Here we wanted to investigate whether the missingness of the <code class="language-plaintext highlighter-rouge">'rating'</code> column was dependent on the <code class="language-plaintext highlighter-rouge">'minutes'</code> column or the <code class="language-plaintext highlighter-rouge">'n_steps'</code> column.
+
+> Minutes and Rating
+**Null Hypothesis:** The missingness in the 'rating' column is independent of the 'minutes' column.
+**Alternate Hypothesis:** The missingness in the 'rating' column depends on the 'minutes' column.
+**Test Statistic:** The test statistic is the absolute difference in the mean 'minutes' between the groups with missing and non-missing 'rating' values.
+**Significance Level:** 0.05
+
+We then peformed a permutation test by shuffling the missingness of minutes 1000 times which we could then use for finding the absolute mean difference.
+
+<iframe
+  src="assets/emp-dist-mean-diff-mins.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+As show in the graph above, the **observed statistic** is **51.4597** which is designated by the red line. We found our **p-value** to be **0.129** which is greater than our significance level of 0.05. Since this is the case, we **fail to reject** the null hypothesis that the missingness in the 'rating' column is independent of the 'minutes' column. Therefore, the missingness in 'rating' does not depend on 'minutes'
+
+> N Steps and Rating
+**Null Hypothesis:** The missingness in the 'rating' column is independent of the 'n_steps' column.
+**Alternate Hypothesis:** The missingness in the 'rating' column depends on the 'n_steps' column.
+**Test Statistic:** The test statistic is the difference in the mean 'n_steps' between the groups with missing and non-missing 'rating' values.
+**Significance Level:** 0.05
+
+Again we performed a permutation test but for these columns by shuffling the missingness of n_steps 1000 times which helps us to find our test statistic, the difference in mean.
+
+<iframe
+  src="assets/emp-dist-mean-diff-steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+We can see that from our graph of distributions, the our **observed statistic** (the red line), is significantly further away and holds a value of **1.339**. The green line is our **p-value** and has a value of **0.0**. Since our p-value is less than the significance level (0.0 < 0.05), we will **reject the null hypothesis**. Hence, The missingness in 'rating' depends on 'n_steps'.
+
+## Hypothesis Testing
