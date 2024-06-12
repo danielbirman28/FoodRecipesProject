@@ -116,8 +116,11 @@ Here we wanted to investigate whether the missingness of the <code class="langua
 > Minutes and Rating
 
 **Null Hypothesis:** The missingness in the 'rating' column is independent of the 'minutes' column.
+
 **Alternate Hypothesis:** The missingness in the 'rating' column depends on the 'minutes' column.
+
 **Test Statistic:** The test statistic is the absolute difference in the mean 'minutes' between the groups with missing and non-missing 'rating' values.
+
 **Significance Level:** 0.05
 
 We then peformed a permutation test by shuffling the missingness of minutes 1000 times which we could then use for finding the absolute mean difference.
@@ -134,8 +137,11 @@ As show in the graph above, the **observed statistic** is **51.4597** which is d
 > N Steps and Rating
 
 **Null Hypothesis:** The missingness in the 'rating' column is independent of the 'n_steps' column.
+
 **Alternate Hypothesis:** The missingness in the 'rating' column depends on the 'n_steps' column.
+
 **Test Statistic:** The test statistic is the difference in the mean 'n_steps' between the groups with missing and non-missing 'rating' values.
+
 **Significance Level:** 0.05
 
 Again we performed a permutation test but for these columns by shuffling the missingness of n_steps 1000 times which helps us to find our test statistic, the difference in mean.
@@ -152,9 +158,13 @@ We can see that from our graph of distributions, the our **observed statistic** 
 ## Hypothesis Testing
 
 Like we mentioned in the intro, we want to explore whether healthy or nonhealthy recipes tend to have a higher number of steps. To investigate this, we ran a **permutation test** with these hypotheses and test statistic:
+
 **Null Hypothesis:** There is no significant difference in steps between healthy and non-healthy recipes
+
 **Alternate Hypothesis:** There is a significant difference in steps between healthy and non-healthy recipes
+
 **Test Statistic:** The mean difference in healthy steps versus non healthy steps
+
 **Significance Level:** 0.05
 
 We chose a permutation test because we do not have any information of the population, and want to see if the distribution of healthy and non-healthy steps come from the same population. We believe that the number of steps for healthy recipes may be higher because, for example, say you have lots of fresh produce, there would be more steps to prep each ingredient whereas say a microwave dinner would be less healthy but have less steps to make. We chose this test statistic because we want to see the difference in steps between healthy and non-healthy recipes. We can see which recipes tend to have higher number of steps.
