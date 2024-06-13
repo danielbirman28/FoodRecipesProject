@@ -255,7 +255,7 @@ The two groups we chose for our fairness model were healthy vs. unhealthy. The t
   frameborder="0"
 ></iframe>
 
-The actual RMSE difference between healthy and unhealthy recipes is -0.2616990780340527. The p-value we generated from the permutation test was **0.043**. This p-value is less than the significance level (0.05), so we reject the null hypothesis. This suggests that there is a significant difference in RMSE between healthy and unhealthy recipes. We reject that the model is fair; as a result, the model's RMSE is higher for unhealthy recipes and lower for healthy recipes.
+The actual RMSE difference between healthy and unhealthy recipes is -0.2617. The p-value we generated from the permutation test was **0.043**. This p-value is less than the significance level (0.05), so we reject the null hypothesis. This suggests that there is a significant difference in RMSE between healthy and unhealthy recipes. We reject that the model is fair; as a result, the model's RMSE is higher for unhealthy recipes and lower for healthy recipes.
 
 
 ## Conclusion
