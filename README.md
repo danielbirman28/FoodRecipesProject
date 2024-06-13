@@ -208,11 +208,11 @@ Tag Length could be a noteworthy feature as recipes with more tags could have lo
 
 <code class="language-plaintext highlighter-rouge">'is_dessert'</code>
 
-We wanted to use the feature of <code class="language-plaintext highlighter-rouge">'is_dessert'</code> to see if desserts had more steps in their recipe. In our hypothesis test, we conluded that unhealthy recipes tend to have more steps, so using <code class="language-plaintext highlighter-rouge">'is_dessert'</code> could be a useful feature.
+We wanted to use the feature of 'is_dessert' to see if desserts had more steps in their recipe. In our hypothesis test, we conluded that unhealthy recipes tend to have more steps, so using 'is_dessert' could be a useful feature.
 
 <code class="language-plaintext highlighter-rouge">'is_healthy'</code>
 
-Contrary to the above point, we wanted to use <code class="language-plaintext highlighter-rouge">'is_healthy'</code> to see if healthier recipes have less steps. As we learned in our hypothesis test, healthier recipes tend to have less steps than unhealthy recipes, so this feature could be helpful in predicting steps for healthy recipes.
+Contrary to the above point, we wanted to use is_healthy to see if healthier recipes have less steps. As we learned in our hypothesis test, healthier recipes tend to have less steps than unhealthy recipes, so this feature could be helpful in predicting steps for healthy recipes.
 
 <code class="language-plaintext highlighter-rouge">'calories (#)'</code>
 
