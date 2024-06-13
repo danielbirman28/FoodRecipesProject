@@ -262,7 +262,7 @@ The actual RMSE difference between healthy and unhealthy recipes is -0.261699078
 
 Our data science project investigated the relationship between recipe healthiness and the number of steps involved in preparing them, using datasets from food.com. Through comprehensive data cleaning, exploratory data analysis, and hypothesis testing, we discovered several key insights.
 
-## Key Findings
+### Key Findings
 
 1. **Distribution of Steps**: Both healthy and non-healthy recipes tend to have a similar distribution shape for the number of steps, but non-healthy recipes generally involve more steps on average. This could be attributed to complex dessert recipes that fall under the non-healthy category.
 
@@ -272,14 +272,14 @@ Our data science project investigated the relationship between recipe healthines
 
 4. **Prediction Model**: We developed a Random Forest Regressor to predict the number of steps in a recipe. By incorporating features such as preparation time, tag length, dessert classification, healthiness, calorie count, and ingredient count, our model significantly improved prediction accuracy compared to the baseline linear regression model. The use of hyperparameter tuning further optimized the model’s performance.
 
-## Implications
+### Implications
 
 Understanding the relationship between recipe complexity and healthiness has practical implications for various stakeholders:
 - **Home Cooks**: Can use this information to select recipes based on desired complexity and healthiness, streamlining meal planning and preparation.
 - **Recipe Developers**: Gain insights into designing recipes that balance healthiness with ease of preparation, catering to different user preferences.
 - **Nutritionists and Dietitians**: Can better guide clients in choosing recipes that are both healthy and manageable to prepare, promoting sustainable eating habits.
 
-## Future Work
+### Future Work
 
 Our project lays the groundwork for further exploration. Future work could involve:
 - **Incorporating More Features**: Including additional variables such as cuisine type, meal type (breakfast, lunch, dinner), and user demographics to enhance prediction accuracy.
