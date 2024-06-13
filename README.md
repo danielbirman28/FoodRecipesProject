@@ -194,3 +194,34 @@ Before creating our baseline model, we noticed that some entries in the minutes 
 
 ## Final Model
 
+#### Features
+
+For our final model, the features we used include: <code class="language-plaintext highlighter-rouge">'minutes'</code>, <code class="language-plaintext highlighter-rouge">'tag_length'</code>, <code class="language-plaintext highlighter-rouge">'is_dessert'</code>, <code class="language-plaintext highlighter-rouge">'is_healthy'</code>, <code class="language-plaintext highlighter-rouge">'calories (#)'</code>, and finally <code class="language-plaintext highlighter-rouge">'n_ingredients'</code>
+
+<code class="language-plaintext highlighter-rouge">'minutes'</code>
+
+We chose the feature for minutes because in our EDA we saw that as minutes increases, steps also increase. Naturally a correlation between the two features was prevalent. This would be helping in predicting total steps because if minutes increases, steps is likely to increase as well.
+
+<code class="language-plaintext highlighter-rouge">'tag_length'</code>
+
+Tag Length could be a noteworthy feature as recipes with more tags could have longer minutes associated to the recipe because there could be more complex steps needed to make the recipe. This could be helpful because if a recipe has more steps it could inicate a lengthier amount of steps.
+
+<code class="language-plaintext highlighter-rouge">'is_dessert'</code>
+
+We wanted to use the feature of <code class="language-plaintext highlighter-rouge">'is_dessert'</code> to see if desserts had more steps in their recipe. In our hypothesis test, we conluded that unhealthy recipes tend to have more steps, so using <code class="language-plaintext highlighter-rouge">'is_dessert'</code> could be a useful feature.
+
+<code class="language-plaintext highlighter-rouge">'is_healthy'</code>
+
+Contrary to the above point, we wanted to use <code class="language-plaintext highlighter-rouge">'is_healthy'</code> to see if healthier recipes have less steps. As we learned in our hypothesis test, healthier recipes tend to have less steps than unhealthy recipes, so this feature could be helpful in predicting steps for healthy recipes.
+
+<code class="language-plaintext highlighter-rouge">'calories (#)'</code>
+
+The calorie count of a recipe could be used because the higher calories a recipe has, the unhealthier it tends to be. So this could be used to explore the relationship between calories and recipe steps.
+
+<code class="language-plaintext highlighter-rouge">'n_ingredients'</code>
+
+The number of ingredients a recipe has is correlated with total number of steps as the more ingredients present, the more time it will take to prepare each ingredient. So, the more ingredients a recipe has, the more steps the recipe will likely have as well.
+
+#### Modeling Algorithm
+
+For our modeling algorithm, we used a <code class="language-plaintext highlighter-rouge">RandomForrestRegressor</code> and a <code class="language-plaintext highlighter-rouge">RandomizedSearchCV</code> to tune our hyperparameters of <code class="language-plaintext highlighter-rouge">'regressor__n_estimators'</code>, <code class="language-plaintext highlighter-rouge">'regressor__max_depth'</code>, <code class="language-plaintext highlighter-rouge">'regressor__min_samples_split'</code>, and <code class="language-plaintext highlighter-rouge">'regressor__min_samples_leaf'</code>. We chose a Random Forest Regressor for the model because it effectively captures non-linear relationships, is robust to overfitting, and requires minimal data preprocessing. In tandem with the model, we used a RandomizedSearchCV, which in contrast to GridSearchCV, doesn't try out all parameter values, but rather a fixed number of parameter settings is sampled from the specified distributions. After running the RandomizedSearchCV, we found that the best hyperparamaters were <code class="language-plaintext highlighter-rouge">{'regressor__n_estimators': 50, 'regressor__min_samples_split': 2, 'regressor__min_samples_leaf': 1, 'regressor__max_depth': None}</code>. Our model produce a RMSE of **3.539**, which is 1.75 units better than our original baseline model. Additionally, the R^2 increased from the baseline's 0.184 to our new model's R^2 of 0.632, nearly a **0.45** increase, and a 243% improvement in the how well the model predicts an outcome.
