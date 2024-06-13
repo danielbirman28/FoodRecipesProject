@@ -244,7 +244,7 @@ The two groups we chose for our fairness model were healthy vs. unhealthy. The t
 
 **Alternative Hypothesis:** Our model is unfair, and there is a significant difference in RMSE between healthy and unhealthy recipes.
 
-**Test Statistic:** Root Mean Squared Error (RMSE) between the two groups: healthy and unhealthy recipes.
+**Test Statistic:** Difference in RMSE between the two groups: healthy and unhealthy recipes.
 
 **Significance Value:** 0.05
 
