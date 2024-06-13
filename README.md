@@ -236,3 +236,54 @@ Here is a graph that depicts how are model is trained on the data:
   height="600"
   frameborder="0"
 ></iframe>
+
+## Fairness Analysis
+The two groups we chose for our fairness model were healthy vs. unhealthy. The threshold for healthy and unhealthy depended on certain buzzwords included in the tag of individual recipes as mentioned in the data cleaning section above. To evaluate the data we choose to use RMSE like we did above.
+
+**Null Hypothesis:** Our model is fair, and there is no significant difference in RMSE between healthy and unhealthy recipes.
+
+**Alternative Hypothesis:** Our model is unfair, and there is a significant difference in RMSE between healthy and unhealthy recipes.
+
+**Test Statistic:** Root Mean Squared Error (RMSE) between the two groups: healthy and unhealthy recipes.
+
+**Significance Value:** 0.05
+
+<iframe
+  src="assets/fairness_analysis_graph.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+The actual RMSE difference between healthy and unhealthy recipes is -0.2616990780340527. The p-value we generated from the permutation test was **0.043**. This p-value is less than the significance level (0.05), so we reject the null hypothesis. This suggests that there is a significant difference in RMSE between healthy and unhealthy recipes. We reject that the model is fair; as a result, the model's RMSE is higher for unhealthy recipes and lower for healthy recipes.
+
+
+## Conclusion
+
+Our data science project investigated the relationship between recipe healthiness and the number of steps involved in preparing them, using datasets from food.com. Through comprehensive data cleaning, exploratory data analysis, and hypothesis testing, we discovered several key insights.
+
+## Key Findings
+
+1. **Distribution of Steps**: Both healthy and non-healthy recipes tend to have a similar distribution shape for the number of steps, but non-healthy recipes generally involve more steps on average. This could be attributed to complex dessert recipes that fall under the non-healthy category.
+
+2. **Factors Affecting Steps**: Our hypothesis testing revealed a significant difference in the number of steps between healthy and non-healthy recipes. Contrary to our initial assumption, non-healthy recipes tend to have more steps. This might be due to the elaborate preparation methods often required for non-healthy, particularly dessert, recipes.
+
+3. **Missingness Analysis**: Our analysis indicated that the missingness in the 'rating' column depends on the 'n_steps' column but is independent of the 'minutes' column. This suggests that recipes with more steps are more likely to have missing ratings, potentially due to user fatigue or the complexity of rating multi-step recipes.
+
+4. **Prediction Model**: We developed a Random Forest Regressor to predict the number of steps in a recipe. By incorporating features such as preparation time, tag length, dessert classification, healthiness, calorie count, and ingredient count, our model significantly improved prediction accuracy compared to the baseline linear regression model. The use of hyperparameter tuning further optimized the model’s performance.
+
+## Implications
+
+Understanding the relationship between recipe complexity and healthiness has practical implications for various stakeholders:
+- **Home Cooks**: Can use this information to select recipes based on desired complexity and healthiness, streamlining meal planning and preparation.
+- **Recipe Developers**: Gain insights into designing recipes that balance healthiness with ease of preparation, catering to different user preferences.
+- **Nutritionists and Dietitians**: Can better guide clients in choosing recipes that are both healthy and manageable to prepare, promoting sustainable eating habits.
+
+## Future Work
+
+Our project lays the groundwork for further exploration. Future work could involve:
+- **Incorporating More Features**: Including additional variables such as cuisine type, meal type (breakfast, lunch, dinner), and user demographics to enhance prediction accuracy.
+- **Exploring Causal Relationships**: Investigating causal links between recipe characteristics and user ratings or completion rates to understand user engagement better.
+- **Enhanced Machine Learning Models**: Experimenting with advanced models like neural networks or ensemble methods to further improve predictive performance.
+
+In conclusion, our project sheds light on the intricate dynamics between recipe healthiness and complexity, providing valuable insights for both culinary enthusiasts and professionals. By leveraging data science techniques, we have demonstrated how data-driven approaches can enhance our understanding of everyday activities, such as cooking, and improve decision-making processes in culinary practices.
