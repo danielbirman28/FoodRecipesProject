@@ -1,4 +1,4 @@
-# Investigating the relationship between food recipes and their total steps
+# Exploring the Relationship Between Food Recipe Complexity and Healthiness
 
 By Daniel Birman and Megha Kataki
 
